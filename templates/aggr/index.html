@@ -1,0 +1,14 @@
+<h1>Link Aggregator</h1>
+
+{% if latest_posts_list %}
+  <dl>
+    {% for post in latest_posts_list %}
+      <!-- <li><a href="/aggr/{{ post.id }}">{{ post.description }}</a></li> -->
+      <dt><a href="/aggr/posts/{{ post.id }}">{{ post.description }}</a></dt>
+      <dd>{{ post.url }}</br><a href="{{ post.url }}">Go there!</a></dd>
+    {% endfor %}
+  </dl>
+{% else %}
+  <p>No entries are available</p>
+{% endif %}
+
